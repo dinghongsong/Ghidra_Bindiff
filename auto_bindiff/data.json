@@ -1,0 +1,32 @@
+{"binFileDataSet" : [
+    {
+        "primary":"libmain.so",
+        "secondary":"libagg.so.2.1.0",
+        "label":true
+    },
+    {
+        "primary":"libmain.so",
+        "secondary":"libpng16.so.16.36.0",
+        "label":false
+    },
+    {
+        "primary":"libSDL2_image.so",
+        "secondary":"libagg.so.2.1.0",
+        "label":false
+    },
+    {
+        "primary":"libSDL2_image.so",
+        "secondary":"libpng16.so.16.36.0",
+        "label":true
+    },
+    {
+        "primary":"libSDL2.so",
+        "secondary":"libagg.so.2.1.0",
+        "label":false
+    },
+    {
+        "primary":"libSDL2.so",
+        "secondary":"libpng16.so.16.36.0",
+        "label":false
+    }
+]}
