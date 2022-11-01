@@ -44,7 +44,7 @@ public class AutoBindiff{
 
     public Path getFilteredBinExport(String binFile){
         Path binexp = Paths.get(Constants.AUTO_BINDIFF_DIR,"binexportFile", binFile+".BinExport");
-        BinExportFilter filter = new BinExportFilter(binexp, 0);
+        BinExportFilter filter = new BinExportFilter(binexp, 1);
         return  filter.filter();
     }
 

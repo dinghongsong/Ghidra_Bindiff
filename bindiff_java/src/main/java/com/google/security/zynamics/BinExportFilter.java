@@ -28,7 +28,7 @@ public class BinExportFilter {
      * @param input_filename: the path of BinExport file.
      */
     public BinExportFilter(Path input_filename) {
-        this(input_filename, 0);
+        this(input_filename, 1);
     }
 
     /**
