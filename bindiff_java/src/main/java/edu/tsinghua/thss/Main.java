@@ -33,13 +33,14 @@ public class Main {
         // load json
         List<DataSetJSONObj.BinFileDataSet> binFileDataSet;
         try {
-            String jsonStr = Files.readString(Paths.get(Constants.AUTO_BINDIFF_DIR, "data.json"), StandardCharsets.UTF_8);
+            String jsonStr = Files.readString(Paths.get(Constants.AUTO_BINDIFF_DIR, "data2.json"), StandardCharsets.UTF_8);
             DataSetJSONObj dataJsonObj = JSON.parseObject(jsonStr, DataSetJSONObj.class);
             binFileDataSet = dataJsonObj.getBinFileDataSet();
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException(e);
         }
+
 
         for (DataSetJSONObj.BinFileDataSet fileDataSet : binFileDataSet) {
             AutoBindiff autoBindiff = new AutoBindiff(fileDataSet.getPrimary(), fileDataSet.getSecondary(), fileDataSet.getLabel()

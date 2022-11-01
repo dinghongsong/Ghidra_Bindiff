@@ -48,7 +48,7 @@ public class AutoBindiff{
 
     public String getBindiff(Path primary, Path secondary){
         String bindiffFilePath = this.bindiff_output_dir + primary.toString().split("/")[primary.toString().split("/").length - 1].replaceAll(".BinExport", "") + "_vs_" + secondary.toString().split("/")[secondary.toString().split("/").length - 1].replaceAll(".BinExport", "") + ".BinDiff";
-        String[] cmd = {bindiff, primary.toString(), secondary.toString(), "--output_dir=" + this.bindiff_output_dir};
+        String[] cmd = {bindiff, "--primary=" + primary.toString(), "--secondary=" + secondary.toString(), "--output_dir=" + this.bindiff_output_dir};
 
         try {
             Process exec = Runtime.getRuntime().exec(cmd);
@@ -88,6 +88,7 @@ public class AutoBindiff{
         System.out.printf(this.primary + " has %d functions, all match function:%d, selected match function:%d, matched proportion: %f%n", total_func_primary, all_matched_cnt, matched_cnt, (double)matched_cnt/total_func_primary);
         System.out.printf(this.secondary + " has %d functions, all match function:%d, selected match function:%d, matched proportion: %f%n", total_func_secondary, all_matched_cnt, matched_cnt, (double)matched_cnt/total_func_secondary);
         System.out.println("label: " + this.label + "\n");
+
 
 
     }
