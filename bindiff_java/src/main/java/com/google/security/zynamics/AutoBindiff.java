@@ -67,15 +67,19 @@ public class AutoBindiff{
         Connection c = DriverManager.getConnection("jdbc:sqlite:" + bindiffFilePath);
 //        System.out.println("Opened database successfully");
         Statement statement = c.createStatement();
-        ResultSet matched_func = statement.executeQuery("SELECT COUNT(*) FROM function WHERE similarity > %f and confidence > %f".formatted(this.fs_th, this.fc_th));
 
+
+        ResultSet matched_func = statement.executeQuery("SELECT COUNT(*) FROM function WHERE similarity > %f and confidence > %f".formatted(this.fs_th, this.fc_th));
         // the size of match function
         matched_func.next();
-        float matched_cnt = matched_func.getInt(1);
+        int matched_cnt = matched_func.getInt(1);
+
+        ResultSet all_matched_func = statement.executeQuery("SELECT COUNT(*) FROM function");
+        // the size of all match function
+        all_matched_func.next();
+        int all_matched_cnt = all_matched_func.getInt(1);
 
         ResultSet total_func = statement.executeQuery("SELECT functions,libfunctions FROM file");
-
-
         total_func.next();
         int total_func_primary = total_func.getInt("functions") + total_func.getInt("libfunctions");
         total_func.next();
@@ -83,9 +87,9 @@ public class AutoBindiff{
         statement.close();
         c.close();
 
-        System.out.printf(this.primary + " has %d functions, matched proportion: %f%n", total_func_primary, matched_cnt/total_func_primary);
-        System.out.printf(this.secondary + " has %d functions, matched proportion: %f%n", total_func_secondary, matched_cnt/total_func_secondary);
-        System.out.println("label: " + this.label);
+        System.out.printf(this.primary + " has %d functions, all match function:%d, selected match function:%d, matched proportion: %f%n", total_func_primary, all_matched_cnt, matched_cnt, (float)matched_cnt/total_func_primary);
+        System.out.printf(this.secondary + " has %d functions, all match function:%d, selected match function:%d, matched proportion: %f%n", total_func_secondary, all_matched_cnt, matched_cnt, (float)matched_cnt/total_func_secondary);
+        System.out.println("label: " + this.label + "\n");
 
 
     }
