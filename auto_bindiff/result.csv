@@ -1,0 +1,19 @@
+primary name,secondary name,total 1,total 2,matched,selected,primary score,secondary score,label
+libmain.so,libagg.so.2.1.0,347,212,63,51,0.146974063,0.240566038,TRUE
+libmain.so,libpng16.so.16.36.0,347,440,74,11,0.031700288,0.025,FALSE
+libSDL2_image.so,libagg.so.2.1.0,559,212,1,1,0.001788909,0.004716981,FALSE
+libSDL2_image.so,libpng16.so.16.36.0,559,440,361,238,0.425760286,0.540909091,TRUE
+libSDL2.so,libagg.so.2.1.0,1099,212,5,5,0.004549591,0.023584906,FALSE
+libSDL2.so,libpng16.so.16.36.0,1099,440,147,28,0.025477707,0.063636364,FALSE
+libSDL2_mixer.so,libvorbis.so.0.4.8,232,118,45,26,0.112068966,0.220338983,TRUE
+libmain_v7a.so,libagg.so.2.1.0,331,212,58,43,0.129909366,0.202830189,TRUE
+libSDL2_image_v7a.so,libpng16.so.16.36.0,475,440,370,265,0.557894737,0.602272727,TRUE
+libSDL2_mixer_v7a.so,libvorbis.so.0.4.8,221,118,42,24,0.108597285,0.203389831,TRUE
+libopus.so,libopus.so.0.7.0,440,303,141,52,0.118181818,0.171617162,TRUE
+libpdfview2.so,libfreetype.so.6.16.1,1389,1082,555,200,0.143988481,0.184842884,TRUE
+libsdl_mixer.so,libFLAC.so.8.3.0,739,328,71,37,0.050067659,0.112804878,TRUE
+libsdl_mixer.so,libogg.so.0.8.2,739,47,41,39,0.052774019,0.829787234,TRUE
+libsdl_mixer.so,libmikmod.so.3.3.0,739,259,116,60,0.081190798,0.231660232,TRUE
+libsdl_mixer.so,libvorbis.so.0.4.8,739,118,47,27,0.036535859,0.228813559,TRUE
+libmain.so,libSDL2.so,347,1099,154,64,0.18443804,0.058234759,FALSE
+libmain.so,libSDL2_image.so,347,559,144,40,0.115273775,0.071556351,FALSE

@@ -28,7 +28,65 @@
         "primary":"libSDL2.so",
         "secondary":"libpng16.so.16.36.0",
         "label":false
+    },
+     {
+        "primary":"libSDL2_mixer.so",
+        "secondary":"libvorbis.so.0.4.8",
+        "label":true
+    },
+    {
+        "primary":"libmain_v7a.so",
+        "secondary":"libagg.so.2.1.0",
+        "label":true
+    },
+    {
+        "primary":"libSDL2_image_v7a.so",
+        "secondary":"libpng16.so.16.36.0",
+        "label":true
+    },
+    {
+        "primary":"libSDL2_mixer_v7a.so",
+        "secondary":"libvorbis.so.0.4.8",
+        "label":true
+    },
+    {
+        "primary":"libopus.so",
+        "secondary":"libopus.so.0.7.0",
+        "label":true
+    },
+    {
+        "primary":"libpdfview2.so",
+        "secondary":"libfreetype.so.6.16.1",
+        "label":true
+    },
+    {
+        "primary":"libsdl_mixer.so",
+        "secondary":"libFLAC.so.8.3.0",
+        "label":true
+    },
+    {
+        "primary":"libsdl_mixer.so",
+        "secondary":"libogg.so.0.8.2",
+        "label":true
+    },
+    {
+        "primary":"libsdl_mixer.so",
+        "secondary":"libmikmod.so.3.3.0",
+        "label":true
+    },
+    {
+        "primary":"libsdl_mixer.so",
+        "secondary":"libvorbis.so.0.4.8",
+        "label":true
+    },
+    {
+        "primary":"libmain.so",
+        "secondary":"libSDL2.so",
+        "label":false
+    },
+    {
+        "primary":"libmain.so",
+        "secondary":"libSDL2_image.so",
+        "label":false
     }
-
-
 ]}

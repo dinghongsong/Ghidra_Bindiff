@@ -12,7 +12,6 @@ import java.util.Map;
 
 
 public class AutoBindiff{
-    private final String ghidraAnalyzeHeadless;
     private final String primary;
     private final String secondary;
     private final String label;
@@ -24,8 +23,7 @@ public class AutoBindiff{
 
 
 
-    public AutoBindiff(String ghidraAnalyzeHeadless, String primary, String secondary, boolean label, String bindiff_output_dir, String bindiff, double fs_th, double fc_th) throws IOException {
-        this.ghidraAnalyzeHeadless = ghidraAnalyzeHeadless;
+    public AutoBindiff(String primary, String secondary, boolean label, String bindiff_output_dir, String bindiff, double fs_th, double fc_th) throws IOException {
         this.primary = primary;
         this.secondary = secondary;
         this.label = Boolean.toString(label);
@@ -68,7 +66,7 @@ public class AutoBindiff{
 //        System.out.println("Opened database successfully");
         Statement statement = c.createStatement();
 
-
+//        System.out.println(bindiffFilePath);
         ResultSet matched_func = statement.executeQuery("SELECT COUNT(*) FROM function WHERE similarity > %f and confidence > %f".formatted(this.fs_th, this.fc_th));
         // the size of match function
         matched_func.next();
@@ -87,8 +85,8 @@ public class AutoBindiff{
         statement.close();
         c.close();
 
-        System.out.printf(this.primary + " has %d functions, all match function:%d, selected match function:%d, matched proportion: %f%n", total_func_primary, all_matched_cnt, matched_cnt, (float)matched_cnt/total_func_primary);
-        System.out.printf(this.secondary + " has %d functions, all match function:%d, selected match function:%d, matched proportion: %f%n", total_func_secondary, all_matched_cnt, matched_cnt, (float)matched_cnt/total_func_secondary);
+        System.out.printf(this.primary + " has %d functions, all match function:%d, selected match function:%d, matched proportion: %f%n", total_func_primary, all_matched_cnt, matched_cnt, (double)matched_cnt/total_func_primary);
+        System.out.printf(this.secondary + " has %d functions, all match function:%d, selected match function:%d, matched proportion: %f%n", total_func_secondary, all_matched_cnt, matched_cnt, (double)matched_cnt/total_func_secondary);
         System.out.println("label: " + this.label + "\n");
 
 
