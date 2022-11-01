@@ -10,4 +10,4 @@
 ## step 2
 - run ./bindiff_java/src/main/java/edu/tsinghua/thss/GetBinExportFile.java to get BinExport files
 ## step 3
-- run ./bindiff_java/src/main/java/edu/tsinghua/thss/Main.java to get the result of comparison
+- run ./bindiff_java/src/main/java/edu/tsinghua/thss/Main.java to get the result of comparison.
